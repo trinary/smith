@@ -1,0 +1,39 @@
+#!/usr/bin/env ruby
+
+require 'optparse'
+
+$:.unshift(File.join(File.dirname(__FILE__), "/../lib"))
+require 'smith'
+
+COMMANDS = %w( start stop )
+
+option_parser = OptionParser.new do |opts|
+
+  opts.banner = "Smith (#{Smith::VERSION}): A campfire bot for Dev/Ops tasks and other misc fun @API\nUsage: [smith] [start|stop] [option]\n\n"
+
+  opts.separator <<-EOS
+Supported commands:
+
+    start [normal|debug|silent]  Start Smith with a log level.
+
+    stop                         Stop Smith.
+
+Examples:
+    smith start
+    smith stop
+EOS
+end
+
+option_parser.parse!
+
+cmd = ARGV.shift
+if COMMANDS.include?(cmd)
+  begin
+    Smith.new.send(cmd.to_sym, ARGV)
+  rescue Exception => err
+    puts err.message
+    puts err.backtrace.join("\n")
+  end
+else
+  puts option_parser.help
+end

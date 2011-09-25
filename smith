@@ -1,0 +1,19 @@
+#!/bin/sh
+
+CMD=$1
+ROOM=$2
+SMITH_HOME=`PWD`
+
+if [[ $CMD == 'start' ]]; then
+  echo "Getting latest Smith updates..."
+  git pull
+  bundle install
+
+  echo "Starting Smith..."
+  $SMITH_HOME/bin/launcher $CMD $ROOM &
+
+elif [[ $CMD == 'stop' ]]; then
+  echo "Stopping Smith..."
+  $SMITH_HOME/bin/laumcher $CMD
+
+fi

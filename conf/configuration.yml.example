@@ -1,0 +1,18 @@
+
+room_1:
+  user:
+    name: BotName
+    token: 40_character_alphanumeric_string
+  admins:
+    - { name: AdminUser }
+  ignores:
+    - { name: Smith }
+
+room_2:
+  user:
+    name: BotName
+    token: 40_character_alphanumeric_string
+  admins:
+    - { name: AdminUser }
+  ignores:
+    - { name: Smith }

@@ -1,0 +1,15 @@
+## MAC OS
+.DS_Store
+
+## VIM
+*.swp
+
+## LOGS
+log/*
+
+## CONFIG
+conf/*.yml
+
+## DEPLOYMENT BUNDLE
+.bundle
+vendor/bundle
