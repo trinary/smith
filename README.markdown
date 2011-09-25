@@ -3,7 +3,7 @@
 
 Description:
 
-   Smith is a Campfire Bot for the Dev and Ops teams @API for the automation convenience... but mostly for the fun.
+   A campfire bot for Dev/Ops tasks and other misc fun @API.
 
    - Commands:
 
